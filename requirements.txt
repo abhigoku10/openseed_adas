@@ -16,7 +16,6 @@ ftfy
 regex
 nltk
 vision-datasets==0.2.2
-pycocotools==2.0.4
 diffdist
 pyarrow
 cityscapesscripts
@@ -27,4 +26,3 @@ gradio==3.13.0
 scann
 kornia==0.6.4
 torchmetrics==0.6.0
-mpi4py

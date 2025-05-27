@@ -55,6 +55,9 @@ def load_opt_command(args):
     parser.add_argument('--image_path', help='Path to the user input image', default='images/street.jpg')
     parser.add_argument('--config_overrides', nargs='*', help='Override parameters on config with a json style string, e.g. {"<PARAM_NAME_1>": <PARAM_VALUE_1>, "<PARAM_GROUP_2>.<PARAM_SUBGROUP_2>.<PARAM_2>": <PARAM_VALUE_2>}. A key with "." updates the object in the corresponding nested dict. Remember to escape " in command line.')
     parser.add_argument('--overrides', help='arguments that used to override the config file in cmdline', nargs=argparse.REMAINDER)
+    parser.add_argument('--input_folder', help='Path to input folder containing images', default='input/')
+    parser.add_argument('--output_folder', help='Path to store output results', default='output/')
+
 
     cmdline_args = parser.parse_args() if not args else parser.parse_args(args)
 
