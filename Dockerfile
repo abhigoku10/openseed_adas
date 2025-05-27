@@ -14,7 +14,7 @@ RUN [ -e /usr/bin/python ] || ln -s /usr/bin/python3 /usr/bin/python && \
     [ -e /usr/bin/pip ] || ln -s /usr/bin/pip3 /usr/bin/pip
 
 # Clone OpenSeeD
-RUN https://github.com/abhigoku10/openseed_adas.git
+RUN git clone https://github.com/abhigoku10/openseed_adas.git
 
 # Copy custom inference scripts into OpenSeeD
 #COPY openseed_inference_script.py /workspace/OpenSeeD/openseed_inference_script.py

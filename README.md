@@ -3,14 +3,12 @@
 - Docker
 - GPU with drivers installed
 
-## 1. Extract and keep all the scripts in the same folder as the Dockerfile
-
-## 2. Build the docker Image
+## 1. Build the docker Image
 ```
 docker build -t openseed_inf .
 ```
 
-## 3. Run Inference for Image Segmentation
+## 2. Run Inference for Image Segmentation
 ```
 docker run --gpus all --rm -v <path-to-you-folder-with-images>:/workspace/OpenSeeD/input -v <path-to-your-destination-folder>:/workspace/OpenSeeD/output openseed_inf image
 ```
@@ -19,6 +17,26 @@ docker run --gpus all --rm -v <path-to-you-folder-with-images>:/workspace/OpenSe
 ```
 docker run --gpus all --rm -v <path-to-you-folder-with-videos>:/workspace/OpenSeeD/input -v <path-to-your-destination-folder>:/workspace/OpenSeeD/output openseed_inf video
 ```
+---
+
+## 🧪 Experiments & Results
+
+A set of test images were used to evaluate panoptic segmentation performance. These were passed through the modified pipeline to produce:
+
+- Segmentation visualizations
+- Structured JSON outputs with object counts
+
+### Image
+
+![Original](images/input/sample09.jpg)
+![Segmented](images/results/sample09.jpg)
+
+### Video
+
+[Original Video](images/input/20150407_1657_56391_HR_H264.avi)  
+[Segmented Video](images/results/20150407_1657_56391_HR_H264_segmented.mp4)
+
+---
 
 # Issues encountered:
 ## 1. Error response from daemon: could not select device driver "" with capabilities: [[gpu]] 
