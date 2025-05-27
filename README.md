@@ -38,7 +38,7 @@ A set of test images were used to evaluate panoptic segmentation performance. Th
 
 ---
 
-# Issues encountered:
+# Issues encountered
 ## 1. Error response from daemon: could not select device driver "" with capabilities: [[gpu]] 
 **Resolution**: Docker cannot access the GPU due to NVIDIA Container toolkit not being installed. 
 
