@@ -16,16 +16,10 @@ RUN [ -e /usr/bin/python ] || ln -s /usr/bin/python3 /usr/bin/python && \
 # Clone OpenSeeD
 RUN git clone https://github.com/abhigoku10/openseed_adas.git
 
-# Copy custom inference scripts into OpenSeeD
-#COPY openseed_inference_script.py /workspace/OpenSeeD/openseed_inference_script.py
-#COPY openseed_inference_video.py /workspace/OpenSeeD/openseed_inference_video.py
-#COPY arguments.py /workspace/OpenSeeD/utils/arguments.py
-
 # Set working dir to OpenSeeD
 WORKDIR /workspace/openseed_adas
 
 # Install dependencies
-#COPY requirements.txt /workspace/OpenSeeD/requirements.txt
 RUN pip install -r requirements.txt && \
     pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu124 && \
     pip install numpy==1.23.5 && \
